@@ -34,5 +34,32 @@ const parent = React.createElement(
     ]
 )
 
+//JSX
+const jsxHeading = <h1 id='heading' className='heading' tabIndex="5">Namaste React using JSX</h1>
+//const jsxImageTag = <img id='heading' className='heading' tabIndex="5" src={screenshot}></img>
+
+
+//React functional component
+//should starts with caps
+
+const Tittle = () => (
+  <h1 className='heading'>Tittle123</h1>
+)
+const number = 1000;
+//can use JS code inside component using {}
+// can render one component inside other (Component composition)
+const HeadingComponent = () => (
+  <div id='container'>
+    <Tittle/> 
+    <Tittle></Tittle>
+    {number}
+    {Tittle()}
+    <h2>{number+number}</h2>
+    <h1 className='heading'>Namaste React tag using functional component</h1>
+  </div>
+)
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(parent);
+//root.render(jsxHeading);
+root.render(<HeadingComponent/>);
